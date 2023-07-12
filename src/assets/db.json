@@ -1,0 +1,105 @@
+{
+	"items": [
+	  {
+		"id": 0,
+		"imageUrl": "https://cdn.discordapp.com/attachments/1002184923593056399/1128711305151385651/image_8.jpg",
+		"name": "Burger",
+		"types": [0, 1],
+		"roasting": ["medium", "well done", "rare"],
+		"price": 3,
+		"category": 1,
+		"rating": 4
+	  },
+	  {
+		"id": 1,
+		"imageUrl": "https://cdn.discordapp.com/attachments/1002184923593056399/1128711304841019534/image_7.jpg",
+		"name": "Double Burger",
+		"types": [0, 1],
+		"roasting": ["medium", "well done", "rare"],
+		"price": 5,
+		"category": 1,
+		"rating": 6
+	  },
+	  {
+		"id": 2,
+		"imageUrl": "https://cdn.discordapp.com/attachments/1002184923593056399/1128711305453387806/image_9.jpg",
+		"name": "Vegan Burger",
+		"types": [0, 1],
+		"roasting": ["medium", "well done", "rare"],
+		"price": 4.50,
+		"category": 1,
+		"rating": 8
+	  },
+	  {
+		"id": 3,
+		"imageUrl": "https://cdn.discordapp.com/attachments/1002184923593056399/1128711305755369613/image_10.jpg",
+		"name": "Cheeseburger",
+		"types": [0, 1],
+		"roasting": ["medium", "well done", "rare"],
+		"price": 3.50,
+		"category": 1,
+		"rating": 10
+	  },
+	  {
+		"id": 4,
+		"imageUrl": "https://cdn.discordapp.com/attachments/1002184923593056399/1128711305151385651/image_8.jpg",
+		"name": "Burger",
+		"types": [0, 1],
+		"roasting": ["medium", "well done", "rare"],
+		"price": 5,
+		"category": 1,
+		"rating": 4
+	  },
+	  {
+		"id": 5,
+		"imageUrl": "https://cdn.discordapp.com/attachments/1002184923593056399/1128711305151385651/image_8.jpg",
+		"name": "Burger",
+		"types": [0, 1],
+		"roasting": ["medium", "well done", "rare"],
+		"price": 5,
+		"category": 1,
+		"rating": 4
+	  },
+	  {
+		"id": 6,
+		"imageUrl": "https://cdn.discordapp.com/attachments/1002184923593056399/1128711305151385651/image_8.jpg",
+		"name": "Burger",
+		"types": [0, 1],
+		"roasting": ["medium", "well done", "rare"],
+		"price": 5,
+		"category": 1,
+		"rating": 4
+	  },
+	  {
+		"id": 7,
+		"imageUrl": "https://cdn.discordapp.com/attachments/1002184923593056399/1128711305151385651/image_8.jpg",
+		"name": "Burger",
+		"types": [0, 1],
+		"roasting": ["medium", "well done", "rare"],
+		"price": 5,
+		"category": 1,
+		"rating": 4
+	  },
+	  {
+		"id": 8,
+		"imageUrl": "https://cdn.discordapp.com/attachments/1002184923593056399/1128711305151385651/image_8.jpg",
+		"name": "Burger",
+		"types": [0, 1],
+		"roasting": ["medium", "well done", "rare"],
+		"price": 5,
+		"category": 1,
+		"rating": 4
+	  },
+	  {
+		"id": 9,
+		"imageUrl": "https://cdn.discordapp.com/attachments/1002184923593056399/1128711305151385651/image_8.jpg",
+		"name": "Burger",
+		"types": [0, 1],
+		"roasting": ["medium", "well done", "rare"],
+		"price": 5,
+		"category": 1,
+		"rating": 4
+	  }
+	]
+  }
+  

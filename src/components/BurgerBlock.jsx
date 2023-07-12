@@ -1,22 +1,32 @@
-function BurgerBlock(props) {
+import React, { useState } from "react"
+
+import Burger from "../assets/img/burger.svg"
+
+function BurgerBlock({ title, price }) {
+	let [burgerCount, setBurgerCount] = useState(0);
+
+	const onClickBtn = () => {
+		setBurgerCount(burgerCount + 1);
+	};
+
 	return(
-		<div class="burger-block">
-              <img class="burger-block__image" src="../img/burger.svg" alt="burger" />
-              <h4 class="burger-block__title">{props.title}</h4>
-              <div class="burger-block__selector">
+		<div className="burger-block">
+              <img className="burger-block__image" src="https://orderapp-static.burgerkingrus.ru/x256/mobile_image/8475d42353118b56ac7701d3a7da9cb0.webp" alt="burger" />
+              <h4 className="burger-block__title">{title}</h4>
+              <div className="burger-block__selector">
                 <ul>
-                  <li class="active">light loaf</li>
+                  <li className="active">light loaf</li>
                   <li>dark loaf</li>
                 </ul>
                 <ul>
-                  <li class="active">medium</li>
+                  <li className="active">medium</li>
                   <li>well done</li>
                   <li>rare</li>
                 </ul>
               </div>
-              <div class="burger-block__bottom">
-                <div class="burger-block__price">of ${props.price}</div>
-                <div class="button button--outline button--add">
+              <div className="burger-block__bottom">
+                <div className="burger-block__price">of ${price}</div>
+                <div onClick={onClickBtn} className="button button--outline button--add">
                   <svg
                     width="12"
                     height="12"
@@ -29,7 +39,7 @@ function BurgerBlock(props) {
                     />
                   </svg>
                   <span>Add</span>
-                  <i>2</i>
+                  <i>{burgerCount}</i>
                 </div>
               </div>
             </div>
