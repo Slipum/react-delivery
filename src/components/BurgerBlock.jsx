@@ -1,32 +1,30 @@
-import React, { useState } from "react"
+import React from "react"
 
-import Burger from "../assets/img/burger.svg"
-
-function BurgerBlock({ title, price }) {
-	let [burgerCount, setBurgerCount] = useState(0);
-
-	const onClickBtn = () => {
-		setBurgerCount(burgerCount + 1);
-	};
+function BurgerBlock({ title, price, imageUrl, selection, types }) {
+	const [activeType, setActiveType] = React.useState(0)
+	const [activeSel, setActiveSel] = React.useState(0)
 
 	return(
 		<div className="burger-block">
-              <img className="burger-block__image" src="https://orderapp-static.burgerkingrus.ru/x256/mobile_image/8475d42353118b56ac7701d3a7da9cb0.webp" alt="burger" />
+              <img className="burger-block__image" src={imageUrl} alt="burger" />
               <h4 className="burger-block__title">{title}</h4>
               <div className="burger-block__selector">
                 <ul>
-                  <li className="active">light loaf</li>
-                  <li>dark loaf</li>
+                  {types.map((type, i) => (
+					<li key={type} onClick={() => setActiveType(i)} className={activeType === i ? 'active' : ''} >{type}</li>
+					//it is better to declare one method per state 
+				  ))}
                 </ul>
                 <ul>
-                  <li className="active">medium</li>
-                  <li>well done</li>
-                  <li>rare</li>
+					{selection.map((choose, i) => (
+						<li key={choose} onClick={() => setActiveSel(i)} className={activeSel === i ? 'active' : ''} >{choose}</li>
+						//it is better to declare one method per state 
+					 ))}
                 </ul>
               </div>
               <div className="burger-block__bottom">
                 <div className="burger-block__price">of ${price}</div>
-                <div onClick={onClickBtn} className="button button--outline button--add">
+                <div className="button button--outline button--add">
                   <svg
                     width="12"
                     height="12"
@@ -39,7 +37,7 @@ function BurgerBlock({ title, price }) {
                     />
                   </svg>
                   <span>Add</span>
-                  <i>{burgerCount}</i>
+                  <i>0</i>
                 </div>
               </div>
             </div>

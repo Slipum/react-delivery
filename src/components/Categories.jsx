@@ -14,13 +14,15 @@ function Categories() {
 
 	const onClickCtg = (index) => {
 		setActive(index)
+		//If you need additional methods use this way of declaring the state,
+		//and if you need only one method, see how it is done in the BurgerBlock.jsx file
 	}
 
 	return (
 	  <div className="categories">
 		<ul>
 		  {
-			categories.map((value, i) => <li onClick={() => onClickCtg(i)} className={active == i ? "active" : ""}>
+			categories.map((value, i) => <li key={i} onClick={() => onClickCtg(i)} className={active === i ? "active" : ""}>
 				{value}
 			</li>
 			)
