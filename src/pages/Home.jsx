@@ -8,22 +8,32 @@ import Skeleton from '../components/BurgerBlock/Skeleton';
 export const Home = () => {
   const [items, setItems] = React.useState([]);
   const [isLoading, setIsLoading] = React.useState(true);
+  const [sortType, setSortType] = React.useState({
+    name: 'popularity',
+    sortProperty: '0',
+  });
+  const [categoryId, setCategoryId] = React.useState(0);
 
   React.useEffect(() => {
-    fetch('https://64b01903c60b8f941af538b8.mockapi.io/items')
+    const sortBy = sortType.sortProperty;
+    const order = sortBy !== 'title' ? '&order=desc' : '';
+    const category = categoryId > 0 ? `category=${categoryId}` : '';
+
+    setIsLoading(true);
+    fetch(`https://64b01903c60b8f941af538b8.mockapi.io/items?${category}&sortBy=${sortBy}${order}`)
       .then((res) => res.json())
       .then((arr) => {
         setItems(arr);
         setIsLoading(false);
       });
     window.scrollTo(0, 0);
-  }, []);
+  }, [categoryId, sortType]);
 
   return (
     <div className="container">
       <div className="content__top">
-        <Categories />
-        <Sort />
+        <Categories value={categoryId} onClickCtg={(id) => setCategoryId(id)} />
+        <Sort type={sortType} setType={setSortType} />
       </div>
       <h2 className="content__title">All menu</h2>
       <div className="content__items">
