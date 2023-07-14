@@ -8,7 +8,6 @@
 - React Router v6 (navigation)
 - Axios + Fetch (sending requests to backend)
 - React Hooks
-- Prettier (code formatting)
 - CSS-Modules / SCSS (styling)
 - React Content Loader (skeleton loading)
 - React Pagination
