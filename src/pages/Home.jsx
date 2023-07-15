@@ -5,7 +5,7 @@ import Sort from '../components/Sort';
 import BurgerBlock from '../components/BurgerBlock';
 import Skeleton from '../components/BurgerBlock/Skeleton';
 
-export const Home = () => {
+export const Home = ({ searhValue }) => {
   const [items, setItems] = React.useState([]);
   const [isLoading, setIsLoading] = React.useState(true);
   const [sortType, setSortType] = React.useState({
@@ -18,16 +18,19 @@ export const Home = () => {
     const sortBy = sortType.sortProperty;
     const order = sortBy !== 'title' ? '&order=desc' : '';
     const category = categoryId > 0 ? `category=${categoryId}` : '';
+    const searh = searhValue !== undefined ? `&title=${searhValue}` : '';
 
     setIsLoading(true);
-    fetch(`https://64b01903c60b8f941af538b8.mockapi.io/items?${category}&sortBy=${sortBy}${order}`)
+    fetch(
+      `https://64b01903c60b8f941af538b8.mockapi.io/items?${category}&sortBy=${sortBy}${order}${searh}`,
+    )
       .then((res) => res.json())
       .then((arr) => {
         setItems(arr);
         setIsLoading(false);
       });
     window.scrollTo(0, 0);
-  }, [categoryId, sortType]);
+  }, [categoryId, sortType, searhValue]);
 
   return (
     <div className="container">
