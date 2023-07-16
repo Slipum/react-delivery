@@ -4,6 +4,7 @@ import Categories from '../components/Categories';
 import Sort from '../components/Sort';
 import BurgerBlock from '../components/BurgerBlock';
 import Skeleton from '../components/BurgerBlock/Skeleton';
+import Pagination from '../components/Pagination';
 
 export const Home = ({ searhValue }) => {
   const [items, setItems] = React.useState([]);
@@ -13,6 +14,7 @@ export const Home = ({ searhValue }) => {
     sortProperty: '0',
   });
   const [categoryId, setCategoryId] = React.useState(0);
+  const [selectedPage, setSelectedPage] = React.useState(1);
 
   React.useEffect(() => {
     const sortBy = sortType.sortProperty;
@@ -22,7 +24,7 @@ export const Home = ({ searhValue }) => {
 
     setIsLoading(true);
     fetch(
-      `https://64b01903c60b8f941af538b8.mockapi.io/items?${category}&sortBy=${sortBy}${order}${searh}`,
+      `https://64b01903c60b8f941af538b8.mockapi.io/items?page=${selectedPage}&limit=4&${category}&sortBy=${sortBy}${order}${searh}`,
     )
       .then((res) => res.json())
       .then((arr) => {
@@ -30,7 +32,7 @@ export const Home = ({ searhValue }) => {
         setIsLoading(false);
       });
     window.scrollTo(0, 0);
-  }, [categoryId, sortType, searhValue]);
+  }, [categoryId, sortType, searhValue, selectedPage]);
 
   return (
     <div className="container">
@@ -44,6 +46,7 @@ export const Home = ({ searhValue }) => {
           ? [...new Array(6)].map((_, index) => <Skeleton key={index} />)
           : items.map((obj) => <BurgerBlock key={Object.id} {...obj} />)}
       </div>
+      <Pagination onChangePage={(number) => setSelectedPage(number)} />
     </div>
   );
 };
